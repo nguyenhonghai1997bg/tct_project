@@ -1,0 +1,32 @@
+.slide-show {
+  margin: 0px;
+  padding: 0px;
+}
+
+.slide-show .categories-list-slide-show {
+  border: 1px solid #e9ecef;
+  margin-right: 11.6px;
+  margin-left: -14.7px;
+  border-top: none;
+  list-style-type: none;
+  padding-bottom: 20px;
+  padding-left: 35px;
+  height: 440px;
+}
+
+.slide-show .categories-list-slide-show li {
+  padding: 13px 10px 13px 0px;
+}
+
+.slide-show .categories-list-slide-show li a {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+  font-size: 16px;
+  line-height: 15px;
+}
+
+.slide-show .categories-list-slide-show li a:hover {
+  color: green;
+}
+

@@ -1,0 +1,61 @@
+.nav-right .right-box {
+  border: 1px solid #e8e8e8;
+}
+
+.nav-right .right-box .title {
+  background-color: #009241;
+  line-height: 25px;
+  padding: 5px;
+  color: white;
+  font-weight: bold;
+}
+
+.nav-right .right-box .content .icon {
+  padding: 5px 5px 5px 10px;
+  font-size: 20px;
+  color: red;
+  text-align: center;
+}
+
+.nav-right .right-box .content .contact {
+  font-size: 15px;
+}
+
+.nav-right .right-box .content .contact-title {
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.nav-right .right-box .product,
+.nav-right .right-box .news {
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.nav-right .right-box .product .product-image,
+.nav-right .right-box .news .product-image {
+  width: 30%;
+}
+
+.nav-right .right-box .product .describe,
+.nav-right .right-box .news .describe {
+  padding-left: 5px;
+  width: 70%;
+}
+
+.nav-right .right-box .product .describe .name,
+.nav-right .right-box .news .describe .name {
+  font-size: 14px;
+  font-weight: bold;
+  color: black;
+}
+
+.nav-right .right-box .product .describe .price,
+.nav-right .right-box .news .describe .price {
+  color: #009241;
+  font-weight: bold;
+}
+
+.nav-right .list {
+  border-bottom: 0px;
+}
+

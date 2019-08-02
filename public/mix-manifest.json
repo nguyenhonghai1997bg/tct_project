@@ -1,0 +1,16 @@
+{
+    "/js/app.js": "/js/app.js",
+    "/css/app.css": "/css/app.css",
+    "/css/customer/header.css": "/css/customer/header.css",
+    "/css/customer/navbar.css": "/css/customer/navbar.css",
+    "/css/customer/footer.css": "/css/customer/footer.css",
+    "/css/customer/categories_list.css": "/css/customer/categories_list.css",
+    "/css/customer/products_list.css": "/css/customer/products_list.css",
+    "/css/customer/nav-right.css": "/css/customer/nav-right.css",
+    "/css/detail_product.css": "/css/detail_product.css",
+    "/css/search_products.css": "/css/search_products.css",
+    "/css/index.css": "/css/index.css",
+    "/js/hide_categories_menu.js": "/js/hide_categories_menu.js",
+    "/js/libraries/owl.carousel.min.js": "/js/libraries/owl.carousel.min.js",
+    "/css/libraries/owl.carousel.min.css": "/css/libraries/owl.carousel.min.css"
+}

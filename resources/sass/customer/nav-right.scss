@@ -1,0 +1,52 @@
+@import '../variables';
+.nav-right {
+    .right-box {
+        border: 1px solid $color-border-base;
+        .title {
+            background-color: $green;
+            line-height: 25px;
+            padding: 5px;
+            color: white;
+            font-weight: bold;
+        }
+        .content {
+            .icon {
+                padding: 5px 5px 5px 10px;
+                font-size: 20px;
+                color: red;
+                text-align: center;
+            }
+            .contact {
+                font-size: 15px;
+            }
+
+            .contact-title {
+                font-size: 14px;
+                color: #6c757d;
+            }
+        }
+        .product, .news {
+            border-bottom: 1px solid $color-border-base;
+            .product-image {
+                width: 30%;
+            }
+            .describe {
+                padding-left: 5px;
+                width: 70%;
+                .name {
+                    font-size: 14px;
+                    font-weight: bold;
+                    color: black;
+                }
+                .price {
+                    color: $color-hover-base;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+
+    .list {
+        border-bottom: 0px;
+    }
+}

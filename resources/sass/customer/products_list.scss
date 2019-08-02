@@ -1,0 +1,74 @@
+@import '../variables';
+
+.box-products {
+    border-bottom: 1px solid $color-border-base;
+    position: relative;
+    padding-bottom: 7px;
+    margin-bottom: 20px;
+    .title-box span{
+        border-bottom: 4px solid green;
+        padding-bottom: 10px;
+        font-size: 22px;
+        font-family: 'Roboto', sans-serif;
+        text-transform: uppercase;
+    }
+    .view-all {
+        position: absolute;
+        right: 0px;
+        bottom: 0px;
+        font-style: italic;
+        color: $color-base;
+    }
+    .view-all:hover {
+        color: $color-hover-base;
+    }
+}
+.products {
+    margin-bottom: 80px;
+    .product {
+        padding: 8px;
+        .image {
+            max-width: 100%;
+            text-align: center;
+            margin-bottom: 10px;
+            img {
+                max-width: 100%;
+                max-height: 100%;
+            }
+        }
+        .item {
+            border: 1px #e8e8e8 solid;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+            border-radius: 10px;
+            padding: 5px;
+            .product-content {
+                padding-bottom: 5px;
+                text-align: center;
+                .title {
+                    a {
+                        word-break: break-word;
+                        font-size: 16px;
+                        color: #000;
+                        font-family: 'Roboto', sans-serif;
+                        line-height: 18px;
+                        font-weight: bold;
+                    }
+                }
+                .price {
+                    font-size: 20px;
+                    color: rgb(14, 168, 0);
+                }
+                .add-to-cart-btn .btn {
+                    padding: 5px 10px;
+                    font-size: 14px;
+                }
+                .add-to-cart-btn .btn:hover {
+                    cursor: pointer;
+                    box-shadow: 0px 0px 2px 2px #BBC3C6;
+                    background-color: #009241;
+                }
+            }
+        }
+    }
+}

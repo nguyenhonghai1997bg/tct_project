@@ -1,0 +1,24 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+@import "~font-awesome/scss/font-awesome";
+
+@import 'orver_right';
+
+html, body {
+    font-size: 13px;
+    background-color: white;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.pagination .active {
+    .page-link {
+        background-color: $green;
+        border-color: $green;
+    }
+}

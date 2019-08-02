@@ -1,0 +1,82 @@
+.box-products {
+  border-bottom: 1px solid #e8e8e8;
+  position: relative;
+  padding-bottom: 7px;
+  margin-bottom: 20px;
+}
+
+.box-products .title-box span {
+  border-bottom: 4px solid green;
+  padding-bottom: 10px;
+  font-size: 22px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+
+.box-products .view-all {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  font-style: italic;
+  color: #333;
+}
+
+.box-products .view-all:hover {
+  color: #009241;
+}
+
+.products {
+  margin-bottom: 80px;
+}
+
+.products .product {
+  padding: 8px;
+}
+
+.products .product .image {
+  max-width: 100%;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.products .product .image img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.products .product .item {
+  border: 1px #e8e8e8 solid;
+  border-radius: 10px;
+  padding: 5px;
+}
+
+.products .product .item .product-content {
+  padding-bottom: 5px;
+  text-align: center;
+}
+
+.products .product .item .product-content .title a {
+  word-break: break-word;
+  font-size: 16px;
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  line-height: 18px;
+  font-weight: bold;
+}
+
+.products .product .item .product-content .price {
+  font-size: 20px;
+  color: #0ea800;
+}
+
+.products .product .item .product-content .add-to-cart-btn .btn {
+  padding: 5px 10px;
+  font-size: 14px;
+}
+
+.products .product .item .product-content .add-to-cart-btn .btn:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 2px 2px #BBC3C6;
+  background-color: #009241;
+}
+

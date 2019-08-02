@@ -1,0 +1,60 @@
+.header .support-header span {
+  font-size: 13px;
+}
+
+.header .support-header span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.header .header-cart {
+  position: relative !important;
+}
+
+.header .header-cart a {
+  color: black;
+}
+
+.header .header-cart .header-cart-content {
+  display: none;
+  width: 250px;
+  position: absolute;
+  top: 37px;
+  right: 50px;
+  z-index: 1000;
+  border: 2px solid #e8e8e8;
+  border-bottom: none;
+  background-color: #b3e8ca;
+}
+
+.header .header-cart .header-cart-content .cart-header {
+  border-bottom: 2px solid #e8e8e8;
+  line-height: 20px;
+  padding: 5px 0px;
+}
+
+.header .header-cart .header-cart-content .cart-content {
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.header .header-cart .header-cart-content .cart-content .remove-item-cart:hover {
+  cursor: pointer;
+}
+
+.header .header-cart .header-cart-content .cart-footer {
+  padding: 5px;
+}
+
+.header .header-cart .header-cart-content .cart-footer .amount {
+  font-weight: bold !important;
+  font-size: 15px;
+}
+
+.header .header-cart:hover .header-cart-content {
+  display: block;
+}
+
+.header .search-header {
+  min-height: 38px;
+}
+

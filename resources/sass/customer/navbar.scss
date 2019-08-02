@@ -1,0 +1,31 @@
+.navigation {
+    border-bottom: 1px solid #e9ecef;
+    .nav {
+        border-bottom: none;
+        .nav-link {
+            color: black;
+            font-size: 17px;
+        }
+        .nav-link:hover {
+            border-color: white white #dee2e6;
+            color: green;
+        }
+        .categories-link {
+            color: black;
+            font-size: 17px;
+            display: block;
+            padding: 0.5rem 1rem;
+            border: 1px solid;
+            border-top-left-radius: 0.25rem;
+            border-top-right-radius: 0.25rem;
+            border-bottom: none;
+            border-color: #e9ecef #e9ecef #dee2e6;
+            text-decoration: none;
+            font-weight: bold;
+            font-family: 'Roboto', sans-serif;
+            font-size: 17px;
+            text-align: center;
+            z-index: 10000;
+        }
+    }
+}

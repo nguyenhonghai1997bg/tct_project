@@ -1,0 +1,37 @@
+@import '../variables';
+$color-boder-footer: #333;
+$color-footer: #b5b5b5;
+.footer {
+    background-image: url("/images/background-footer.png");
+    padding-bottom: 30px;
+    color: $color-footer;
+    .info {
+        border-bottom: 1px solid $color-boder-footer;
+        padding-bottom: 30px;
+        .footer-logo {
+            padding-bottom: 30px;
+            border-bottom: 1px solid $color-boder-footer;
+            margin-bottom: 20px;
+        }
+        .footer-info-title {
+            padding-bottom: 20px;
+            border-bottom: 1px solid $color-boder-footer;
+        }
+        .info-item {
+            padding: 5px;
+            a {
+                color: $color-footer;
+            }
+        }
+        .thong-ke {
+            border: 1px solid;
+            background-color: #009241;
+            padding: 10px;
+            border-radius: 5px;
+            color: white;
+            box-shadow: 2px 2px 4px #999999;
+            font-weight: bold;
+            font-size: 16px;
+        }
+    }
+}
