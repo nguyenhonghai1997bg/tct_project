@@ -23,11 +23,11 @@ class OrderController extends Controller
 
     public function store(StoreOrderRequest $request)
     {
-        if ($request->ship == -1) {
-            return redirect()->back()->with('error', __('orders.address_not_found'));
-        }
+        // if ($request->ship == -1) {
+        //     return redirect()->back()->with('error', __('orders.address_not_found'));
+        // }
         if (\Cart::subtotal(0,'.','') == 0) {
-            return redirect()->back()->with('error', __('orders.error_total_cart'));
+            return redirect()->back()->with('error', 'Bạn cần chọn sản phẩm!');
         }
         \DB::beginTransaction();
         try {
@@ -76,22 +76,8 @@ class OrderController extends Controller
                 'notify' => __('orders.success'),
             ]);
             event(new \App\Events\OrderEvent(__('orders.success'), $link, $order, $notify->id));
-            // $sendToPhone = '+84' . substr($order->phone, 1, 9);
-            // $account_sid = 'AC48892300f8a8224ced9a1332fc3ffa8c';
-            // $auth_token = '2e39fee797e0626906bb3d80a4f0e438';
-            // $twilio_number = "+14044452121";
-            // $client = new Client($account_sid, $auth_token);
-            // $client->messages->create(
-            //     // Where to send a text message (your cell phone?)
-            //     "+84392660985",
-            //     array(
-            //         'from' => $twilio_number,
-            //         'body' => __('orders.success')
-            //     )
-            // );
 
             \DB::commit();
-            // $order = $order->with(['detailOrders'])->first();
 
             if ($request->paymethod_id == 2) { //thanh toán qua ngân hang
                 $url = $this->getUrlPeymethod($order, $bankCode);
@@ -198,7 +184,7 @@ class OrderController extends Controller
 
     public function orderDone()
     {
-        return view('orders.order-done');
+        return view('done_order');
     }
 
     public function listOrderByUser()

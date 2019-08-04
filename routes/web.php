@@ -46,12 +46,14 @@ Route::group(['prefix' => '/', 'middleware' => ['authUser', 'locale']], function
     Route::get('products/sales', 'ProductController@listSale')->name('products.sale');
 
     Route::get('products/', 'ProductController@search')->name('users.search');
-    Route::get('products/search-by-priceprice', 'ProductController@searchByPrice');
+    Route::get('products/search-by-price', 'ProductController@searchByPrice');
     Route::post('notifies/seen/{id}', 'Admin\NotifyController@seen');
     Route::get('notifies/users', 'NotifyController@allNotifies')->name('users.allNotifies');
 
     Route::get('products/all-top-sale', 'ProductController@allTopSale')->name('allTopSale');
-    Route::get('products/mua-nhieu-nhat', 'ProductController@allTopOrder')->name('allTopOrder');
+    Route::get('products/mua-nhieu-nhat', 'ProductController@selectProductsByCategory')->name('allTopOrder');
+
+    Route::get('catgories/{categorySlug}/{categoryId}/products', 'ProductController@selectProductsByCategory')->name('products.by_category');
 
 });
 

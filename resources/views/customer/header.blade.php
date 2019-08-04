@@ -58,7 +58,7 @@
                     @endforeach
                 @endif
             <div class="cart-footer">
-                <div class="float-left"><a href="#" class="btn btn-success text-light">Thanh toán</a></div>
+                <div class="float-left"><a href="{{ route('carts.checkout') }}" class="btn btn-success text-light">Thanh toán</a></div>
                 <div class="float-right amount">Số tiền: <span id="subtotal">{{ \Cart::subtotal() ? number_format(\Cart::subtotal(0,'.','')) : 0 }}</span> đ</div>
                 <div class="clearfix"></div>
             </div>

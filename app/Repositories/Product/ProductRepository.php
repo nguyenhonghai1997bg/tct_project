@@ -241,4 +241,11 @@ class ProductRepository extends RepositoryEloquent implements ProductRepositoryI
         }
     }
 
+    public function selectProductsByCategory(int $category_id)
+    {
+        if ($category_id) {
+            return $this->model->active()->where('category_id', $category_id)->paginate(\App\Product::PERPAGE);
+        }
+    }
+
 }

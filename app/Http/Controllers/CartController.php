@@ -39,7 +39,7 @@ class CartController extends Controller
 
     public function checkout()
     {
-        return view('orders.checkout');
+        return view('checkout_order');
     }
 
     public function update(Request $request)

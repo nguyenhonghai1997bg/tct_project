@@ -26,19 +26,19 @@
       <span class="text-waring">{{ __('orders.waiting') }}</span>
     @endif
     @if($paymented == 1)
-      <span class="ml-2 text-success">( {{ __('orders.paymented') }} )</span>
+      <span class="ml-2 text-success">( <font color="green">{{ __('orders.paymented') }}</font> )</span>
     @else
-      <span class="ml-2 text-danger">( {{ __('orders.not_paymented') }} )</span>
+      <span class="ml-2 text-danger">( <font color="red">{{ __('orders.not_paymented') }}</font> )</span>
     @endif
   </div>
 
   </div>
     <!-- /.card-header -->
     <div class="container">
-    <table class="table table-hover">
+    <table class="table table-hover" style="border: 1px solid #666666; padding: 5px;">
       <thead>
-        <tr>
-          <th>#</th>
+        <tr  style="border: 1px solid #666666; padding: 5px;">
+          <th>STT</th>
           <th>{{ __('detailOrders.name') }}</th>
           <th>{{ __('detailOrders.price') }}</th>
           <th>{{ __('detailOrders.quantity') }}</th>
@@ -51,11 +51,11 @@
           </tr>
         @else
           @foreach($detailOrders as $key => $detail)
-            <tr id="column-{{ $detail->id }}">
-              <td>{{ app('request')->input('page') ? \App\DetailOrder::PERPAGE * (app('request')->input('page') - 1) + ($key + 1) :  $key + 1 }}</td>
-              <td id="name-{{ $detail->product->id }}">{{ $detail->product->name }}</td>
-              <td>{{ number_format($detail->price) }}</td>
-              <td>{{ $detail->quantity }}</td>
+            <tr id="column-{{ $detail->id }}"  style="border: 1px solid #666666; padding: 5px;">
+              <td  style="border: 1px solid #666666; padding: 5px;" >{{ app('request')->input('page') ? \App\DetailOrder::PERPAGE * (app('request')->input('page') - 1) + ($key + 1) :  $key + 1 }}</td>
+              <td style="border: 1px solid #666666; padding: 5px;"  id="name-{{ $detail->product->id }}">{{ $detail->product->name }}</td>
+              <td style="border: 1px solid #666666; padding: 5px;" >{{ number_format($detail->price) }}</td>
+              <td style="border: 1px solid #666666; padding: 5px;" >{{ $detail->quantity }}</td>
             </tr>
           @endforeach
         @endif

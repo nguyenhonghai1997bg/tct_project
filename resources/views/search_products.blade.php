@@ -17,7 +17,11 @@
             {{--box product--}}
             <div class="box-products">
                 <h2 class="title-box">
-                    <span>Sản phẩm: " {{ request('key', '') }} "</span>
+                    @if(!isset($category))
+                        <span>Sản phẩm: " {{ request('key', '') }} "</span>
+                    @elseif(isset($category))
+                        <span>Danh mục: " {{ $category->name }} "</span>
+                    @endif
                 </h2>
             </div>
             <div class="products">

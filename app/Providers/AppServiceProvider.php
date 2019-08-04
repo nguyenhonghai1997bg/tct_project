@@ -33,7 +33,7 @@ class AppServiceProvider extends ServiceProvider
     {
         $notifiesAdmin = Notify::whereNull('to_user')->where('status', 0)->orderBy('id', 'DESC')->paginate(Notify::PERPAGE);
         $countNotifiesAdmin = Notify::whereNull('to_user')->where('status', 0)->count();
-        $categories2 = \App\Category::with('catalog')->get(['id', 'name', 'catalog_id']);
+        $categories2 = \App\Category::with('catalog')->get(['id', 'name', 'catalog_id', 'slug']);
         $catalogs2 = \App\Catalog::with('categories')->get(['id', 'name']);
         $hotProducts = $productRepository->hotProducts();
         View::share('notifiesAdmin', $notifiesAdmin);

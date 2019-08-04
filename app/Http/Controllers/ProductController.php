@@ -86,4 +86,12 @@ class ProductController extends Controller
 
         return view('products.search', compact('products', 'maxPrice'));
     }
+
+    public function selectProductsByCategory (string $categorySlug, int $categoryId)
+    {
+        $category = \App\Category::findOrFail($categoryId);
+        $products = $this->productRepository->selectProductsByCategory($categoryId);
+
+        return view('search_products', compact('products', 'category'));
+    }
 }
