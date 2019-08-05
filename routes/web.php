@@ -28,6 +28,10 @@ Route::get('change/profile', 'UserController@editProfile')->name('users.edit_pro
 Route::get('vnpay_return/{order_id}', 'OrderController@vnpayReturn')->name('vnpay_return');
 Route::get('/logout', 'Auth\LoginController@logout')->middleware('auth')->name('users.logout');
 Route::group(['prefix' => '/', 'middleware' => ['authUser', 'locale']], function() {
+
+    Route::get('news', 'NewsController@index')->name('users.news_index');
+    Route::get('news/{id}/{slug}', 'NewsController@show')->name('users.news_detail');
+
     Route::get('products/{id}/{slug}', 'ProductController@show')->name('frontend.products.show');
     Route::resource('reviews', 'ReviewController');
     Route::post('change/profile', 'UserController@updateProfile')->name('users.update_profile');
@@ -51,7 +55,10 @@ Route::group(['prefix' => '/', 'middleware' => ['authUser', 'locale']], function
     Route::get('notifies/users', 'NotifyController@allNotifies')->name('users.allNotifies');
 
     Route::get('products/all-top-sale', 'ProductController@allTopSale')->name('allTopSale');
-    Route::get('products/mua-nhieu-nhat', 'ProductController@selectProductsByCategory')->name('allTopOrder');
+
+    Route::get('san-pham/ban-chay-nhat', 'ProductController@selectAllHotProducts')->name('products.hot');
+    Route::get('san-pham/moi-nhat', 'ProductController@selectAllNewProducts')->name('products.new');
+    Route::get('san-pham/mua-nhieu-nhat', 'ProductController@selectAllTopOrderProducts')->name('products.top_order');
 
     Route::get('catgories/{categorySlug}/{categoryId}/products', 'ProductController@selectProductsByCategory')->name('products.by_category');
 
@@ -60,6 +67,10 @@ Route::group(['prefix' => '/', 'middleware' => ['authUser', 'locale']], function
 Route::get('/admin/products/{id}/{slug}', 'ProductController@show')->name('backend.products.show');
 
 Route::group(['prefix' => 'admin', 'middleware' => ['authAdmin', 'locale'], 'namespace' => 'Admin'], function(){
+
+    Route::resource('companies', 'CompanyController');
+    Route::resource('news', 'NewsController');
+
     Route::get('/', 'HomeController@index')->name('admin.home');
     Route::get('edit-profile', 'UserController@editProfile')->name('admin.edit_profile');
     Route::post('edit-profile', 'UserController@updateProfile')->name('admin.update_profile');

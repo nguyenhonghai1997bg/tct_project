@@ -20,7 +20,7 @@
             <img src="{{ asset('storage/images/mobile.png') }}">
         </div>
         <div class="col-md-9 float-left support-header">
-            <span>Hỗ trợ <br>0123465789</span>
+            <span>Hỗ trợ <br>{{ $spCompany->phone }}</span>
         </div>
     </div>
     <div class="col-md-2 float-left mt-4 header-cart">

@@ -17,10 +17,13 @@
             {{--box product--}}
             <div class="box-products">
                 <h2 class="title-box">
+                    <span>{{ $title }}
+                    @if(!$titleNotShowMore)
                     @if(!isset($category))
-                        <span>Sản phẩm: " {{ request('key', '') }} "</span>
+                       :" {{ request('key', '') }} "</span>
                     @elseif(isset($category))
-                        <span>Danh mục: " {{ $category->name }} "</span>
+                        :" {{ $category->name }} "</span>
+                    @endif
                     @endif
                 </h2>
             </div>

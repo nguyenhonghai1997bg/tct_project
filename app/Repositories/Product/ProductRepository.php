@@ -190,20 +190,20 @@ class ProductRepository extends RepositoryEloquent implements ProductRepositoryI
 
     public function hotProducts()
     {
-        $products = $this->model->active()->orderBy('id', 'DESC')->where('hot_product', true)->limit(10)->get();
+        $products = $this->model->active()->orderBy('id', 'DESC')->where('hot_product', true)->paginate(10);
 
         return $products;
     }
 
     public function allTopOrder()
     {
-        $list = [];
-        $top = \App\DetailOrder::select(\DB::raw('count(id) as count'), 'product_id')->groupBy('product_id')->orderBy('count', 'DESC')->get();
-        foreach($top as $item) {
-            $list[] = $this->model->find($item['product_id']);
+        $top = \App\DetailOrder::select(\DB::raw('count(id) as count'), 'product_id')->groupBy('product_id')->orderBy('count', 'DESC')->get()->toArray();
+        foreach ($top as $p) {
+            $listId[] = $p['product_id'];
         }
 
-        return $list;
+        return $this->model->whereIn('id', $listId)->paginate(\App\Product::PERPAGE);
+
     }
 
     public function topOrdersAdmin()
@@ -246,6 +246,13 @@ class ProductRepository extends RepositoryEloquent implements ProductRepositoryI
         if ($category_id) {
             return $this->model->active()->where('category_id', $category_id)->paginate(\App\Product::PERPAGE);
         }
+    }
+
+    public function selectAllNewProducts()
+    {
+        $products = $this->model->active()->orderBy('id', 'DESC')->paginate(\App\Product::PERPAGE);
+
+        return $products;
     }
 
 }

@@ -129,12 +129,27 @@
             </ul>
           </li>
         @endif
+
+          <li class="nav-item">
+              <a href="{{ route('companies.index') }}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Công ty</p>
+              </a>
+          </li>
+
+          <li class="nav-item">
+              <a href="{{ route('news.index') }}" class="nav-link">
+                  <i class="fa fa-circle-o nav-icon"></i>
+                  <p>Tin tức</p>
+              </a>
+          </li>
+
         <li class="nav-item">
             <a href="{{ route('admin.edit_profile') }}" class="nav-link">
               <i class="fa fa-circle-o nav-icon"></i>
               <p>{{ __('users.profile') }}</p>
             </a>
-          </li>
+        </li>
         <li class="nav-item">
           <a href="{{ route('logout') }}" class="nav-link">
             <i class="fa fa-circle-o nav-icon"></i>

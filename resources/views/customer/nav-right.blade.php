@@ -7,7 +7,7 @@
             <div class="icon col-2 float-left"><i class="fa fa-phone-square" aria-hidden="true"></i></div>
             <div class="contact col-10 float-right">
                 <div class="contact-title">Tư vấn bán hàng 1</div>
-                <div>Mr. Thiên: (+84) 916726959</div>
+                <div>{{ $spCompany->phone }}</div>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -16,7 +16,7 @@
             <div class="icon col-2 float-left"><i class="fa fa-envelope" aria-hidden="true"></i></div>
             <div class="contact col-10 float-right">
                 <div class="contact-title">Tư vấn bán hàng 1</div>
-                <div>Mr. Thiên: (+84) 916726959</div>
+                <div>{{ $spCompany->email }}</div>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -40,16 +40,16 @@
 
     <div class="right-box mb-5 list">
         <div class="title">TIN TỨC</div>
-        @for($i = 1; $i < 5; $i++)
+        @foreach($spNewsLatest as $news)
             <div class="news pb-3 mt-3 mb-2 pr-2">
                 <div class="product-image float-left">
-                    <img src="{{ asset('images/products/' . $product->image_product) }}" width="100%">
+                    <img src="{{ asset('images/news/' . $news->image) }}" width="100%">
                 </div>
                 <div class="describe float-right pt-2">
-                    <a href="#" class="mt-1 font-weight-bold text-dark">Người Việt mua gần 8.000 chiếc iPhone 6s, 6s Plus một ngày</a>
+                    <a href="#" class="mt-1 font-weight-bold text-dark">{{ $news->title }}</a>
                 </div>
                 <div class="clearfix"></div>
             </div>
-        @endfor
+        @endforeach
     </div>
 </div>

@@ -31,7 +31,7 @@
             <h2 class="title-box">
                 <span>Sản phẩm bán chạy nhất</span>
             </h2>
-            <a href="#" class="view-all">Xem tất cả</a>
+            <a href="{{ route('products.hot') }}" class="view-all">Xem tất cả</a>
         </div>
         <div class="products">
             @foreach($hotProducts as $product)
@@ -61,7 +61,7 @@
             <h2 class="title-box">
                 <span>SẢN Phẩm Mới nhất</span>
             </h2>
-            <a href="#" class="view-all">Xem tất cả</a>
+            <a href="{{ route('products.new') }}" class="view-all">Xem tất cả</a>
         </div>
         <div class="products">
             @foreach($latestProducts as $product)
@@ -91,7 +91,7 @@
             <h2 class="title-box">
                 <span>Sản phẩm được mua nhiều nhất</span>
             </h2>
-            <a href="#" class="view-all">Xem tất cả</a>
+            <a href="{{ route('products.top_order') }}" class="view-all">Xem tất cả</a>
         </div>
         <div class="products">
             @foreach($topOrders as $product)

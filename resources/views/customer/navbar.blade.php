@@ -7,7 +7,7 @@
             <a class="categories-link" href="#">DANH MỤC SẢN PHẨM</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Trang chủ</a>
+            <a class="nav-link" href="{{ route('home') }}">Trang chủ</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Giới thiệu</a>

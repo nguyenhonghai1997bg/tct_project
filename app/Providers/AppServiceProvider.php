@@ -36,10 +36,14 @@ class AppServiceProvider extends ServiceProvider
         $categories2 = \App\Category::with('catalog')->get(['id', 'name', 'catalog_id', 'slug']);
         $catalogs2 = \App\Catalog::with('categories')->get(['id', 'name']);
         $hotProducts = $productRepository->hotProducts();
+        $spCompany = \App\Company::first();
+        $spNewsLatest = \App\news::orderBy('id', 'DESC')->limit(4)->get();
         View::share('notifiesAdmin', $notifiesAdmin);
         View::share('countNotifiesAdmin', $countNotifiesAdmin);
         View::share('categories2', $categories2);
         View::share('catalogs2', $catalogs2);
         View::share('hotProducts', $hotProducts);
+        View::share('spCompany', $spCompany);
+        View::share('spNewsLatest', $spNewsLatest);
     }
 }

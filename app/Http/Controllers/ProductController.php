@@ -43,8 +43,9 @@ class ProductController extends Controller
     {
         $products = $this->productRepository->userSearch($request->key, $request->category_id)->paginate(\App\Product::PERPAGE);
         $maxPrice = \App\Product::max('price');
+        $title = 'SẢN PHẨM';
 
-        return view('search_products', compact('products', 'maxPrice'));
+        return view('search_products', compact('products', 'maxPrice', 'title'));
     }
 
     public function searchByPrice(Request $request)
@@ -91,7 +92,35 @@ class ProductController extends Controller
     {
         $category = \App\Category::findOrFail($categoryId);
         $products = $this->productRepository->selectProductsByCategory($categoryId);
+        $title = 'DANH MỤC';
 
-        return view('search_products', compact('products', 'category'));
+        return view('search_products', compact('products', 'category', 'title'));
+    }
+
+    public function selectAllHotProducts()
+    {
+        $products = $this->productRepository->hotProducts();
+        $titleNotShowMore = true;
+        $title = 'SẢN PHẨM BÁN CHẠY NHẤT';
+
+        return view('search_products', compact('products', 'title', 'titleNotShowMore'));
+    }
+
+    public function selectAllNewProducts()
+    {
+        $products = $this->productRepository->selectAllNewProducts();
+        $titleNotShowMore = true;
+        $title = 'SẢN PHẨM MỚI NHẤT';
+
+        return view('search_products', compact('products', 'title', 'titleNotShowMore'));
+    }
+
+    public function selectAllTopOrderProducts()
+    {
+        $products = $this->productRepository->allTopOrder();
+        $titleNotShowMore = true;
+        $title = 'SẢN PHẨM ĐƯỢC MUA NHIỀU NHẤT';
+
+        return view('search_products', compact('products', 'titleNotShowMore', 'title'));
     }
 }

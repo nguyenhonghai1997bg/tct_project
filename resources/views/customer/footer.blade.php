@@ -10,10 +10,10 @@
                     </a>
                 </div>
                 <div class="address">
-                    Tầng 19, Tòa HH1A Linh Đàm Hoàng Liệt, Hoàng Mai, Hà Nội
+                    {{ $spCompany->address }}
                 </div>
-                <div class="phone mt-2">(+84) 985899017 - +84) 985899017</div>
-                <div class="email mt-2">abc@gmail.com</div>
+                <div class="phone mt-2">{{ $spCompany->phone }}</div>
+                <div class="email mt-2">{{ $spCompany->email }}</div>
             </div>
             <div class="col-md-2 col-sm-6 col-xs-12 float-left">
                 <h3 class="text-white footer-info-title">Về chúng tôi</h3>

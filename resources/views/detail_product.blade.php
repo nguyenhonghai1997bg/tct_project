@@ -68,7 +68,7 @@
                 <h2 class="title-box">
                     <span>Sản phẩm liên quan</span>
                 </h2>
-                <a href="#" class="view-all">Xem tất cả</a>
+{{--                <a href="#" class="view-all">Xem tất cả</a>--}}
             </div>
             <div class="products">
                 @foreach($moreProducts as $product)
