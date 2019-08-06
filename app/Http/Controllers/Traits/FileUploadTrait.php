@@ -18,12 +18,10 @@ trait FileUploadTrait
             if (is_file($image)) {
                 $imageName = time(). '.'. $image->getClientOriginalName();
                 $path = public_path("images/$pathSave/" . $imageName);
-                if ($pathSave == 'products') {
-                    if(!File::exists(public_path('images/products'))) {
-                        File::makeDirectory(public_path('images/products/'));
-                    }
-                    \IMG::make($image->getRealPath())->resize(800, 800)->save($path);
+                if (!File::exists(public_path("images/$pathSave/"))){
+                    File::makeDirectory($path, $mode = 0755, true, true);
                 }
+                \IMG::make($image->getRealPath())->resize(800, 800)->save($path);
 
                 $data[] = Image::create([
                     'image_url' => $imageName,
