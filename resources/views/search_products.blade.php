@@ -18,7 +18,7 @@
             <div class="box-products">
                 <h2 class="title-box">
                     <span>{{ $title }}
-                    @if(!$titleNotShowMore)
+                    @if(!isset($titleNotShowMore))
                     @if(!isset($category))
                        :" {{ request('key', '') }} "</span>
                     @elseif(isset($category))
